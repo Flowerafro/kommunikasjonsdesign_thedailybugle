@@ -12,14 +12,12 @@
     <section id="intro">
         <!-- bakgrunnsbilde av et pulserende rødt blinkende "hjerte" -->
         <h2>Du våkner midt på natten</h2>
-        <h3>Det gjør vond ti brystet (rød tekst)</h3>
-
-        <div id="heart-opacity">
-            <div id="heart"><!--blinkende hjerte--></div>
+        <div id="heart-opacity" class="heart-outer">
+            <div id="heart" class="heart"><!--hjerte som slår--></div>
         </div>
-
+        <h3>Det gjør vondt i brystet</h3>
     </section>
-    <section>
+    <section id="article">
         <section>
             <h2>Artikkel tittel - første del om ambulansearb intervju</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur omnis molestias nam ex temporibus
@@ -35,18 +33,22 @@
             <h2>Refleksjon</h2>
         </section>
     </section>
-    <section>
+    <section id="outro">
+        <!--  <div id="heart-end-opacity">
+            <div id="heart-end"></div>
+        </div> -->
         <h2>Avslutning</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque repellat iste dolorem accusantium
-            voluptatibus! Dicta nemo odio quas aperiam ad.
-        </p>
+            voluptatibus! Dicta nemo odio quas aperiam ad.</p>
         <p>infografikk</p>
     </section>
-
-    <section>
-        <!-- bakgrunnsbilde av et pulserende rødt blinkende "hjerte" -->
+    <section id="theend">
+        <div id="heart-opacity-end" class="heart-outer">
+            <div id="heart-end" class="heart"><!--hjerte som slutter å slå--></div>
+        </div>
         <p>Du fikk ikke hjelp i tide..</p>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
