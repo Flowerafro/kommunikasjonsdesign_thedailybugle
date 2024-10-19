@@ -1,0 +1,278 @@
+
+/*********************************************
+ *  Landing Styling
+ *********************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FFF;
+    border-bottom: 1px solid #d9e9ff;
+    color: #061629;
+    font-size: 1rem;
+    line-height: 3.75rem
+}
+
+header a {
+    display: inline-flex;
+    align-items: center;
+    background: #459677;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+
+    margin-right: 1rem;
+    padding: 0 1rem;
+}
+
+
+
+/************************** top news story ********* */
+
+#top-story {
+    background-color: #f1f1f1;
+    
+    max-width: 1000px;
+    margin: 0 auto;
+    height: auto;
+
+}
+.top-story-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6px;
+}
+
+.top-story-wrap a {
+    text-decoration: none;
+    color: #000;
+}
+
+#top-story-image {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#top-story-header {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+#top-story-header h2 {
+    font-size: 1.5em;
+}
+
+.top-story-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/************************** other news story ********* */
+
+#other-news {
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.story-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+}
+
+.story-wrap a {
+    text-decoration: none;
+    color: #000;
+}
+
+.news-box {
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 6px;
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.story-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.story-header {
+    text-align: left;
+}
+
+.story-header h3 {
+    font-size: 1.3em;
+}
+
+.story-header p {
+    font-size: 1.1em;
+}
+
+/************** FOOTER ************/
+
+footer {
+    margin: 0;
+    padding: 1rem;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    background-color: #39454b;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*********************************************
+ *  iPad Styling (min-width: 768px)
+ *********************************************/
+
+ @media (min-width: 768px) {
+    header {
+        font-size: 1.1rem;
+        line-height: 4rem;
+    }
+
+    header a {
+        font-size: 1.3em;
+        margin-right: 1.5rem;
+        padding: 0 1.2rem;
+    }
+
+    #top-story {
+        max-width: 900px;
+        padding: 0;
+    }
+
+    #top-story-image {
+        max-height: 600px;
+    }
+
+    .top-story-image {
+        height: auto;
+    }
+
+    #top-story-header {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    #top-story-header h2 {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+    }
+
+    #other-news {
+        margin: 0 auto;
+        max-width: 900px;
+    }
+
+    .story-wrap {
+        padding: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .news-box {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .story-image {
+        width: auto;
+    }
+
+    .story-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .story-header {
+        text-align: left;
+        padding-left: 1rem;
+    }
+    
+    .story-header h3 {
+        font-size: 1.5em;
+    }
+    
+    .story-header p {
+        font-size: 1.1em;
+    }
+}
+
+/*********************************************
+ *  Desktop Styling (min-width: 1000px)
+ *********************************************/
+
+@media (min-width: 1000px) {
+    header {
+        font-size: 1.2rem;
+        line-height: 4.5rem;
+    }
+
+    header a {
+        font-size: 1.4em;
+        margin-right: 2rem;
+        padding: 0 1.5rem;
+        transition: background 0.3s;
+    }
+
+    header a:hover {
+        background: #39454b;
+    }
+
+    #top-story {
+        padding: 0;
+        // har med seg en max-bredde 900px fra ipad
+    }
+
+    #top-story-header h2:hover {
+        text-decoration: underline;
+    }
+    
+    .story-header:hover {
+        text-decoration: underline;
+    }
+
+    #top-story-image {
+        max-height: 700px;
+    }
+
+   
+    #news-box {
+        margin: 0 auto;
+        max-width: 900px;
+        cursor: pointer;
+    }
+  
+}
