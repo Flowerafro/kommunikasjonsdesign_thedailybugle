@@ -10,20 +10,13 @@ function inViewport(el) {
 /* eventlistener som viser når pulse-animation er på (når id intro er i viewport) og av */
 document.addEventListener('scroll', function () {
     const heartOpacity = document.getElementById("heart-opacity");
-    const heartOpacityEnd = document.getElementById("heart-opacity-end");
 
-    if (inViewport(document.getElementById("article"))) {
+    if (inViewport(document.getElementById("intro"))) {
         heartOpacity.style.display = "none";
-        heartOpacityEnd.style.display = "none";
-    } else if (inViewport(document.getElementById("outro"))) {
+    } else if (inViewport(document.getElementById("intersection"))) {
         heartOpacity.style.display = "flex";
-        heartOpacityEnd.style.display = "none";
-    } else if (inViewport(document.getElementById("theend"))) {
-        heartOpacity.style.display = "none";
-        heartOpacityEnd.style.display = "flex";
     } else {
-        heartOpacity.style.display = "flex";
-        heartOpacityEnd.style.display = "none";
+        heartOpacity.style.display = "none";
     }
 }, {
     passive: true

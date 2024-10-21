@@ -1,0 +1,123 @@
+/**************** Hjerte som slår ****************/
+
+.heart-outer {
+    background-color: var(--red-opacity);
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(10px);
+
+    position: fixed;
+    top: 60%;
+    left: calc(50% - 50.5px);
+}
+.heart { 
+    background-color: var(--red);
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 12rem var(--red));
+
+    border-radius: 50%;
+}
+
+/**************** Hjerte som slår ****************/
+
+#heart-opacity {
+    animation: pulse 5s infinite; 
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#heart {
+   /*  background-color: var(--red);
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 12rem var(--red));
+
+    border-radius: 50%; */
+}
+/**************** Hjerte som slutter å slå ****************/
+
+#heart-opacity-end {
+    /* background-color: var(--red-opacity);
+    width: 102px;
+    height: 102px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(10px);
+
+    position: fixed;
+    top: 60%;
+    left: calc(50% - 50.5px); */
+
+    opacity: 0;
+
+    animation-name: pulseend;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes pulseend {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    80%-100% {
+        opacity: 0;
+    }
+
+}
+
+#heart-end {
+   /*  background-color: var(--red);
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 12rem var(--red));
+
+    border-radius: 50%; */
+}

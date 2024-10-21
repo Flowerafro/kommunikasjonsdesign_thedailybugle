@@ -6,49 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XL-story</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pulse.css">
 </head>
 
 <body>
-    <section id="intro">
-        <!-- bakgrunnsbilde av et pulserende rødt blinkende "hjerte" -->
-        <h2>Du våkner midt på natten</h2>
+    <section id="intro" class="intro-image">
+        <div class="intro-text">
+            <h1>Vet du hvor langt unna hjelpen er når sekundene teller?</h1>
+        </div>
+        <div> <!--hjerte som har full vidde og høyde --> </div>
+
+        <div class="text-container text-center">
+            <p class="text-box">"Jeg tror vår største utfordring er avstander.."</p>
+        </div>
+
+        <div class="text-container text-center">
+            <p class="text-box">Rekker du fram i tide?</p>
+        </div>
+    </section>
+
+    <section id="intersection">
+        <div class="intersection-text">
+            <p class="text-box">Vet du hvor langt unna hjelpen er når sekundene teller?</p>
+        </div>
         <div id="heart-opacity" class="heart-outer">
-            <div id="heart" class="heart"><!--hjerte som slår--></div>
+            <div id="heart" class="heart"></div>
         </div>
-        <h3>Det gjør vondt i brystet</h3>
     </section>
-    <section id="article">
-        <section>
-            <h2>Artikkel tittel - første del om ambulansearb intervju</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur omnis molestias nam ex temporibus
-                nesciunt animi expedita sit ab distinctio.</p>
-            <img src="https://placehold.co/600x400" alt="image1">
-            <p>infografikk</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit dolore aliquam labore eveniet
-                ab, modi reiciendis accusamus ipsum, veritatis quibusdam eaque quam sapiente, possimus quae rem
-                consequuntur cum nisi!</p>
-            <img src="https://placehold.co/200x200" alt="image2">
-        </section>
-        <section>
-            <h2>Refleksjon</h2>
-        </section>
+
+    <section id="video-mid">
+        <!-- video i bakgrunnen og tekstbokser over -->
+        <!-- hjerte pos top_right -->
     </section>
-    <section id="outro">
-        <!--  <div id="heart-end-opacity">
-            <div id="heart-end"></div>
-        </div> -->
-        <h2>Avslutning</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque repellat iste dolorem accusantium
-            voluptatibus! Dicta nemo odio quas aperiam ad.</p>
-        <p>infografikk</p>
+
+    <section id="article-1">
+        <!-- artikkel del 1 -->
+        <!-- buffer boks? -->
+        <!-- class-article: svart bakgrunn tekst left og padding -->
+        <!-- hjerte pos top-right-->
     </section>
-    <section id="theend">
-        <div id="heart-opacity-end" class="heart-outer">
-            <div id="heart-end" class="heart"><!--hjerte som slutter å slå--></div>
-        </div>
-        <p>Du fikk ikke hjelp i tide..</p>
+
+    <section id="map">
+        <!-- Kart -->
+        <!-- hjerte pos top-right-->
     </section>
+
+    <section id="article-2">
+        <!-- artikkel del 2 -->
+        <!-- buffer boks? -->
+        <!-- class-article: svart bakgrunn tekst left og padding -->
+        <!-- hjerte pos top-right-->
+    </section>
+
+    <section id="video-mid2">
+        <!-- video i bakgrunnen og tekstbokser over -->
+        <!-- hjerte pos top_right -->
+    </section>
+
+    <section id="article-3">
+        <!-- artikkel del 3 -->
+        <!-- buffer boks? -->
+        <!-- class-article: svart bakgrunn tekst left og padding -->
+        <!-- hjerte pos top-right-->
+    </section>
+
+    <section id="intersection-2">
+        <!-- svart bakgrunnsbilde med tekst boks -->
+        <!-- to forskjellige pos på hjertet: end_center og center_center ? -->
+    </section>
+
     <script src="script.js"></script>
 </body>
 
 </html>
+
+<!--  
+
+Hjerte som slår:
+<div id="heart-opacity" class="heart-outer">
+            <div id="heart" class="heart"></div>
+        </div>
+
+<div id="heart-opacity-end" class="heart-outer">
+    <div id="heart-end" class="heart"></div>
+</div>
+
+-->
