@@ -49,7 +49,7 @@ strong {
 .section__parallax {
     background-attachment: fixed;
     background-position: center;
-    background-size: 100% auto;
+    background-size: cover; 
     background-repeat: no-repeat;
 }
 
@@ -128,11 +128,15 @@ hr {
 /*********************************************************************************/
 
 .first__box {
-    margin: 0;
+    margin-top: 0;
     padding: 1rem 2rem;
     width: min(96%, 600px);
     text-align: center;
     background-color: white;
+}
+
+.first__box p {
+    margin-top: 10px;
 }
 
 .text-container {
@@ -156,8 +160,8 @@ hr {
 }
 
 .content {
-    font-size: 1.5rem;
-    line-height: 3rem;
+    font-size: 1.2rem;
+    line-height: 2.8rem;
     text-align: left;
     font-style: normal;
 }
@@ -180,5 +184,29 @@ footer {
 }
 
 /*********************************************************************************/
-/*    MEDIA QUERIESSS -- Mobile                                                  */
+/*    MEDIA QUERIESSS -- Desktop                                                 */
 /*********************************************************************************/
+
+@media (min-width: 1000px) {
+
+    .section__parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .content {
+        font-size: 1.5rem;
+        line-height: 3rem;
+        text-align: left;
+        font-style: normal;
+    }
+
+    .first__img__bg {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+    }
+}
