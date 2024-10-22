@@ -10,8 +10,8 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 1rem;
+    text-align: left;
 }
 
 header a {
@@ -21,29 +21,127 @@ header a {
 }
 
 main {
-    padding: 20px;
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 60%;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 main img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 20px 0;
 }
 
 h1 {
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 20px;
-    padding: 1rem;
+
+        color: black;
+        font-size: 4rem;
+        margin-bottom: 20px;
+        padding: 2rem;
+        text-align: center; /* Add this line */
+    
 }
 
 p {
+    
+    line-height: 2;
+    padding: 5rem;
+    font-size: 1.5rem;  
+    color: #333333;
+    padding-top: 0;
+    
+}
+
+.bold {
+    font-weight: bold;
+    line-height: 2;
+    font-size: 2rem;  
+    color: black;
+    text-align: center;
+}
+
+#imgtext {
     color: #666;
-    line-height: 1.6;
+    font-size: 1rem;
     padding: 1rem;
+    margin-top: -2rem;
+    border-style: ridge;
+}
+
+#textimg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#stats {
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+    color: #666;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: -2rem;
+    border-style: ridge;
+}
+
+footer {
+   text-align: center;
+   padding: 1rem;
+}
+
+@media (max-width: 1200px) {
+    main {
+        margin: 0 auto;
+        max-width: 100%;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    p {
+        padding: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .bold {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 0 auto;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .bold {
+        font-size: 1.2rem;
+    }
 }
