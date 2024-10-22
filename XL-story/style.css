@@ -79,7 +79,8 @@ body {
 .text-box {
     background-color: var(--black-opacity);
     color: var(--white);
-    padding: 3rem;
+    padding: 1.7rem;
+    font-size: 1.3rem;
 }
 
 .text-center {
