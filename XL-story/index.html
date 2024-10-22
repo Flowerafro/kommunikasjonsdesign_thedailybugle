@@ -3,14 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>XL-story</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pulse.css">
 </head>
 
 <body>
     <section id="intro" class="intro-image">
+        <!-- video eller bilde -->
         <div class="intro-text">
             <h1>Vet du hvor langt unna hjelpen er når sekundene teller?</h1>
         </div>
@@ -29,15 +34,28 @@
         <div class="intersection-text">
             <p class="text-box">Vet du hvor langt unna hjelpen er når sekundene teller?</p>
         </div>
-        <div id="heart-opacity" class="heart-outer">
+        <!-- <div id="heart-opacity" class="heart-outer">
             <div id="heart" class="heart"></div>
-        </div>
+        </div> -->
     </section>
 
-    <section id="video-mid">
-        <!-- video i bakgrunnen og tekstbokser over -->
-        <!-- hjerte pos top_right -->
+    <section id="case-1">
+        <!-- FØRSTE SAK MED 2 VIDEOER-->
+        <section id="case-1-video">
+            <!-- video i bakgrunnen og tekstbokser over -->
+            <!-- hjerte pos top_right  +  en counter "puls" er statisk(95)frem til en tekstboks som trigger -->
+
+            <!-- Slide in animation slik at den "popper inn" -->
+        </section>
+
+        <section id="case-1-1-video">
+            <!-- NY video i bakgrunnen og tekstbokser over -->
+            <!-- hjerte pos top_right  +  en counter "puls" øker fra  -->
+
+            <!-- Slide in animation slik at den "popper inn" -->
+        </section>
     </section>
+
 
     <section id="article-1">
         <!-- artikkel del 1 -->
@@ -46,22 +64,32 @@
         <!-- hjerte pos top-right-->
     </section>
 
-    <section id="map">
-        <!-- Kart -->
+    <section id="mapContainer">
+        <div id="map">
+
+        </div>
         <!-- hjerte pos top-right-->
+        <!-- Stjerne = ulykke og firkant = bil -->
+        <!-- Ikoner dukker opp når man scroller-->
+        <!-- Tekstbokser over som fører en samtale over Kart som er fixed på bakgrunnen-->
     </section>
 
     <section id="article-2">
         <!-- artikkel del 2 -->
         <!-- buffer boks? -->
+        <!-- med en klokke som tikker -->
         <!-- class-article: svart bakgrunn tekst left og padding -->
         <!-- hjerte pos top-right-->
     </section>
 
-    <section id="video-mid2">
-        <!-- video i bakgrunnen og tekstbokser over -->
-        <!-- hjerte pos top_right -->
+    <section id="case-2">
+        <section id="case-2-image">
+            <!-- ANDRE SAK MED 2 VIDEOER-->
+            <!-- video i bakgrunnen og tekstbokser over -->
+            <!-- hjerte pos top_right -->
+        </section>
     </section>
+
 
     <section id="article-3">
         <!-- artikkel del 3 -->
@@ -70,9 +98,25 @@
         <!-- hjerte pos top-right-->
     </section>
 
+    <section id="case-3">
+        <section id="case-3-video">
+            <!-- TREDJE SAK MED 1-2 VIDEOER-->
+            <!-- video i bakgrunnen og tekstbokser over -->
+            <!-- hjerte pos top_right -->
+        </section>
+    </section>
+
+    <section id="article-4">
+        <!-- artikkel del 4 -->
+        <!-- buffer boks? -->
+        <!-- class-article: svart bakgrunn tekst left og padding -->
+        <!-- hjerte pos top-right-->
+    </section>
+
     <section id="intersection-2">
         <!-- svart bakgrunnsbilde med tekst boks -->
         <!-- to forskjellige pos på hjertet: end_center og center_center ? -->
+        <!--  puls slutter å slå -->
     </section>
 
     <script src="script.js"></script>
