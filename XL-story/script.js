@@ -1,14 +1,14 @@
 /* Sjekker om noe er i viewport (For å skru av hjerte-animasjon) */
-function inViewport(el) {
+/* function inViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
         rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
         rect.bottom > 0
     );
-}
+} */
 
 /* eventlistener som viser når pulse-animation er på (når id intro er i viewport) og av */
-document.addEventListener('scroll', function () {
+/* document.addEventListener('scroll', function () {
     const heartOpacity = document.getElementById("heart-opacity");
 
     if (inViewport(document.getElementById("intro"))) {
@@ -20,56 +20,104 @@ document.addEventListener('scroll', function () {
     }
 }, {
     passive: true
-});
-
-
-
-/* LeafLet map: kart */
-const map = L.map('map').setView([59.54181, 10.55744], 10);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-/* Ikoner til markører på kartet */
-/* eks: var greenIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    shadowUrl: 'leaf-shadow.png',
-
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 }); */
 
 
-/* Markører Ulykkested og Ambulanseposisjon  */
-let pinSepsis = L.marker([59.54181, 10.55744]).bindPopup("Sepsispasient på Tofte"),
-    pinHjerteinfarkt = L.marker([59.53612, 10.52807]).bindPopup("Hjerteinfarkt på Tofte "),
-    pinAMKDrammen = L.marker([59.74354, 10.20406]).bindPopup("Ambulanse fra Sætre på oppdrag i Drammen"),
-    pinAMKAas = L.marker([59.629409, 10.605369]).bindPopup("Første ambulanse fra Ås, på vei til sepsis"),
-    pinAMKAas2 = L.marker([59.66519, 10.79308]).bindPopup("Ny ambulanse sendes fra Ås, sendes til hjerteinfarkt");
 
-let pins = L.layerGroup([pinSepsis, pinHjerteinfarkt, pinAMKDrammen, pinAMKAas, pinAMKAas2]);
-pins.addTo(map); // Add pins to the map
+/*******   Kart fra mapLibre  ********/
 
-let openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+const map = new maplibregl.Map({
+    container: 'map',
+    style:
+        'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+    center: [10.72627, 59.65984],
+    zoom: 18,
+    bearing: 0,
+    pitch: 0
 });
 
-let baseMaps = {
-    "OpenStreetMap": L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }),
-    "OpenTopoMap": openTopoMap
+const chapters = {
+    'amk-sentral': {
+        center: [10.72627, 59.65984],
+        bearing: 0,
+        pitch: 20,
+        zoom: 11
+    },
+    'amk-saetre': {
+        center: [10.20585, 59.74396],
+        bearing: 0,
+        pitch: 20,
+        zoom: 11
+    },
+    'amk-aas': {
+        center: [10.72627, 59.65984],
+        bearing: 0,
+        pitch: 20,
+        zoom: 17
+    },
+    'amk-aas-ut': {
+        center: [10.72509, 59.65985],
+        bearing: 0,
+        pitch: 20,
+        zoom: 13
+    },
+    'tofte-sepsis': {
+        center: [10.53206, 59.53686],
+        bearing: 0,
+        pitch: 20,
+        zoom: 12,
+    },
+    'amk-sentral-nymeld': {
+        center: [10.72509, 59.65985],
+        bearing: 0,
+        pitch: 20,
+        zoom: 17
+    },
+    'tofte-hjerte': {
+        center: [10.55302, 59.54466],
+        bearing: 0,
+        pitch: 20,
+        zoom: 12
+    },
 };
 
-let overlayMaps = {
-    "Pins": pins
+/* Markører */
+
+const markerSentral = new maplibregl.Marker().setLngLat([10.72627, 59.65984]).addTo(map);
+const markerAmkSatre = new maplibregl.Marker().setLngLat([10.20585, 59.74396]).addTo(map);
+const markerAmkAas1 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
+const markerAmkAas2 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
+const markerSepsis = new maplibregl.Marker().setLngLat([10.53206, 59.53686]).addTo(map);
+const markerHjerte = new maplibregl.Marker().setLngLat([10.55302, 59.54466]).addTo(map);
+
+/* For hver scroll, sjekk hvilket el som er i skjermen */
+window.onscroll = function () {
+    const chapterNames = Object.keys(chapters);
+    for (let i = 0; i < chapterNames.length; i++) {
+        const chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            console.log(`Chapter on screen: ${chapterName}`);
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
 };
 
-L.control.layers(baseMaps, overlayMaps).addTo(map);
+/* Setter aktivt element og stilsetter */
+let activeChapterName = 'amk-sentral';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).classList.add('active');
+    document.getElementById(activeChapterName).classList.remove('active');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    const element = document.getElementById(id);
+    const bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fly to a location based on scroll position</title>
+    <meta property="og:description"
+        content="Scroll down through the story and the map will fly to the chapter's location." />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pulse.css">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js'></script>
+</head>
+
+<body>
+
+    <section id="intro">
+
+    </section>
+    <section id="map-section">
+        <div id="map"></div>
+        <div id="features">
+            <section id="amk-sentral" class="active map-section">
+                <p class="dialog">
+                    <strong>AMK-sentralen:</strong><br>"Vi har fått inn en melding om en 60 år gammel kvinne med sepis
+                    på
+                    Tofte.
+                    Sætre-AMK, hvor er dere?"
+                </p>
+            </section>
+            <section id="amk-saetre" class="map-section">
+                <p class="dialog">
+                    <strong>AMK-Sætre:</strong><br>
+                    "Vi hjelper til et oppdrag i Drammen.. "
+                </p>
+            </section>
+            <section id="amk-aas" class="map-section">
+                <p class="dialog">
+                    <strong>AMK-sentralen:</strong><br>
+                    "AMK-Ås, kan dere ta turen til Tofte?"
+                </p>
+            </section>
+            <section id="amk-aas-ut" class="map-section">
+                <p class="dialog">
+                    <strong>AMK-Ås:</strong><br>
+                    "Vi kjører ut fra sentralen nå. 50 minutter unna."
+                </p>
+            </section>
+            <section id="tofte-sepsis" class="map-section">
+                <p class="story">
+                    AMK Ås kommer frem til den syke kvinnen og da tikker det inn en ny melding fra sentralen..
+                </p>
+            </section>
+            <section id="amk-sentral-nymeld" class="map-section">
+                <p class="dialog">
+                    <strong>AMK-sentralen:</strong><br>
+                    "Vi har fått et hjerteinfarkt i Tofte, 7 minutter unna kvinnen med sepsis. Ny bil sendes fra Ås."
+                </p>
+            </section>
+            <section id="tofte-hjerte" class="map-section">
+                <p class="story">
+                    Ny AMK ankommer Tofte, 50 minutter etter AMK-Ås.
+                </p>
+            </section>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
