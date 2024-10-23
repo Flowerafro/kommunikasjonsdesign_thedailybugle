@@ -1,0 +1,71 @@
+
+html,
+body,
+#map {
+    height: 100%;
+    }
+
+
+#map {
+    position: fixed;
+    width: 100%;
+}
+
+#features {
+    width: 50%;
+    height: fit-content;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    position: absolute;
+
+    //background-color: #fafafa;
+}
+
+.map-section {
+    padding: 5rem 0.5rem;
+    line-height: 20px;
+    opacity: 0.25;
+    font-size: 13px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.map-section p {
+    background-color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.dialog {
+    font-style: italic;
+    font-weight: 200;
+}
+
+.story {
+    font-weight: 600;
+}
+
+.map-section strong {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.map-section.active {
+    opacity: 1;
+}
+
+.map-section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+
+#back-btn {
+    padding: 1rem;
+    background-color: red;
+}

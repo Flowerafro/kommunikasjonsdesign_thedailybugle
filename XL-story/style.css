@@ -29,73 +29,112 @@ body {
     padding: 0;
 }
 
-html,
-body,
-#map {
-    height: 100%;
-    }
+/*********************************** TEXT BOX ***********************************/
 
-/*********************************** MAP *************************************/
-
-#map-section {
-    padding: 0.5rem;
+.text-box {
+    background-color: var(--black-opacity);
+    text-align: center;
+    padding: 1rem;
+    width: 80%;
 }
 
-#map {
-    position: fixed;
+/*********************************** INTRO *************************************/
+
+#intro {
     width: 100%;
+    height: 250vh;
+    background-color: var(--black); 
+    color: var(--white);
+
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 100;
 }
 
-#features {
-    width: 50%;
-    height: fit-content;
-    margin-left: 50%;
-    font-family: sans-serif;
-    overflow-y: scroll;
-    position: absolute;
-
-    //background-color: #fafafa;
+.intro-text {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 1.2;
 }
 
-.map-section {
-    padding: 5rem 0.5rem;
-    line-height: 20px;
-    opacity: 0.25;
-    font-size: 13px;
+/*********************************** VIDEO #1 ***********************************/
+
+#case-1 {
+    width: 100%;
+    height: auto;
+    background-color: var(--black);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#case-1-video {
+    background-image: url('IMG/ambulanse-top.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
     height: 100vh;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.map-section p {
-    background-color: #fafafa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    padding: 12px;
+#case-1-1-video {
+    background-image: url('IMG/ambulanse-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.dialog {
-    font-style: italic;
-    font-weight: 200;
+/*********************************** ARTICLE ***********************************/
+
+#article-1 {
+    width: 100%;
+    height: auto;
+    background-color: var(--black);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.story {
-    font-weight: 600;
+.article-div {
+    max-width: 300px;
+    padding: 1rem;
 }
 
-.map-section strong {
-    font-weight: bold;
-    text-transform: uppercase;
+.article-div img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.map-section.active {
-    opacity: 1;
-}
-
-.map-section:last-child {
-    border-bottom: none;
-    margin-bottom: 200px;
+.article-div p {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
