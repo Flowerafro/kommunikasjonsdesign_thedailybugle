@@ -212,7 +212,7 @@ footer {
     }
 
     .story-image img {
-        width: 100%;
+        width: 30rem;
         height: auto;
     }
 
@@ -253,7 +253,7 @@ footer {
 
     #top-story {
         padding: 0;
-        // har med seg en max-bredde 900px fra ipad
+        /* har med seg en max-bredde 900px fra ipad */
     }
 
     #top-story-header h2:hover {
