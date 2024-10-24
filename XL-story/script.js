@@ -27,9 +27,10 @@ document.addEventListener('scroll', function () {
 
     if (inViewport(document.getElementById("article-1"))) {
         heartHeader.style.display = "flex";
-        pulseCounter.classList.add = "counter-on";
+        pulseCounter.style.display = "block";
     } else {
         heartHeader.style.display = "none";
+        pulseCounter.style.display = "none";
     }
 }, {
     passive: true

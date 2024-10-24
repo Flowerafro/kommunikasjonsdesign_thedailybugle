@@ -39,20 +39,23 @@ header {
     display: flex;
     justify-content: space-between;
 
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
     color: var(--white);
 
-    position: sticky;
+    position: fixed;
     top: 0;
+    z-index: 1000;
 }
 
-.counter {
-    display: none; /* default bortgjemt*/
-}
 .counter-on {
-    display: block; /* default bortgjemt*/
+    display: none; /* default bortgjemt*/
     color: var(--white);
-    padding-right: 3.5rem;
+}
+
+#counter {
+    display: block;
+    color: var(--white);
+    padding-right: 3rem;
 }
 
 /*********************************** TEXT BOX ***********************************/
@@ -64,11 +67,14 @@ header {
     width: 80%;
 }
 
+
+
 /*********************************** INTRO *************************************/
 
 #intro {
     width: 100%;
-    height: 250vh;
+     height: 250vh;
+    /*height: auto; /* lagt inn for at header skal forbli sticky */
     background-color: var(--black); 
     color: var(--white);
 
@@ -115,7 +121,8 @@ header {
     background-repeat: no-repeat;
 
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
+    /* height: auto; /* lagt inn for at header skal forbli sticky */
 
     display: flex;
     flex-direction: column;
@@ -134,7 +141,8 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
+     /* height: auto; /* lagt inn for at header skal forbli sticky */
 
     display: flex;
     flex-direction: column;

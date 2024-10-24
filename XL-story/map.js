@@ -15,52 +15,75 @@ const chapters = {
         pitch: 0,
         zoom: 7
     },
-    'amk-saetre': {
+    'amk-sentral-til-saetre': {
+        center: [10.20585, 59.74396],
+        bearing: 0,
+        pitch: 20,
+        zoom: 17
+    },
+    'amk-sentral-til-aas': {
         center: [10.20585, 59.74396],
         bearing: 0,
         pitch: 20,
         zoom: 11
     },
-    'amk-aas': {
-        center: [10.72627, 59.65984],
-        bearing: 0,
-        pitch: 20,
-        zoom: 17
-    },
     'amk-aas-ut': {
-        center: [10.77619, 59.66498],
+        center: [10.72344, 59.65897],
         bearing: 0,
         pitch: 20,
-        zoom: 13
+        zoom: 16
     },
     'tofte-sepsis': {
         center: [10.53206, 59.53686],
         bearing: 0,
         pitch: 20,
-        zoom: 12,
+        zoom: 15,
     },
     'amk-sentral-nymeld': {
-        center: [10.72509, 59.65985],
+        center: [10.53206, 59.53686],
         bearing: 0,
         pitch: 20,
-        zoom: 17
+        zoom: 13
     },
     'tofte-hjerte': {
         center: [10.55302, 59.54466],
         bearing: 0,
         pitch: 20,
-        zoom: 12
+        zoom: 15
     },
 };
+/* Funksjon som lager markører og pop-up info*/
 
-/* Markører */
+function makeMarker(lngLat, imageUrl, popupText) {
+    const mark = document.createElement('div');
+    mark.style.backgroundImage = `url(${imageUrl})`;
+    mark.style.backgroundSize = 'cover';
+    mark.style.width = '50px';
+    mark.style.height = '50px';
+    mark.style.borderRadius = '50%';
+    mark.style.cursor = 'pointer';
 
-const markerSentral = new maplibregl.Marker().setLngLat([10.72627, 59.65984]).addTo(map);
+    const popup = new maplibregl.Popup({ offset: 25 }).setText(popupText);
+
+    new maplibregl.Marker({ element: mark }).setLngLat(lngLat).setPopup(popup).addTo(map);
+}
+
+/* Markører med custom img og popups*/
+
+makeMarker([10.72627, 59.65984], 'IMG/sentral.png', 'Ambulansesentralen i Ås');
+makeMarker([10.20585, 59.74396], 'IMG/amkbil.png', 'Ambulanse som tilhører Sætre, på oppdrag i Drammen');
+makeMarker([10.72497, 59.65924], 'IMG/amkbil2.png', 'En av to ambulanser som tilhører Ås. Sendes ut til kvinnen med Sepsis.');
+makeMarker([10.55326, 59.54381], 'IMG/amkbil3.png', 'Den andre ambulansen som tilhører Ås. Sendes ut til hjerteinfarkt i Tofte.');
+makeMarker([10.53206, 59.53686], 'IMG/pasient.png', 'Kvinnen med sepsis, bor i Tofte.');
+makeMarker([10.53359, 59.53704], 'IMG/amkbil2.png', 'Første ambulanse fra Ås, ankommet kvinnen i Tofte.');
+makeMarker([10.55302, 59.54466], 'IMG/pasient2.png', 'Mannen med hjerteinfarkt, bor 7 minutter unna kvinnen med sepsis i Tofte.');
+
+/* const markerSentral = new maplibregl.Marker().setLngLat([10.72627, 59.65984]).addTo(map);
 const markerAmkSatre = new maplibregl.Marker().setLngLat([10.20585, 59.74396]).addTo(map);
 const markerAmkAas1 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
 const markerAmkAas2 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
 const markerSepsis = new maplibregl.Marker().setLngLat([10.53206, 59.53686]).addTo(map);
-const markerHjerte = new maplibregl.Marker().setLngLat([10.55302, 59.54466]).addTo(map);
+const markerHjerte = new maplibregl.Marker().setLngLat([10.55302, 59.54466]).addTo(map); */
 
 /* For hver scroll, sjekk hvilket el som er i skjermen */
 window.onscroll = function () {
