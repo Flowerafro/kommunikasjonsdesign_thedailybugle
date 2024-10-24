@@ -7,17 +7,30 @@
     <title>XL-story</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pulse.css">
+    <link rel="stylesheet" href="map.css">
     <link rel="icon" href="IMG/ambulanse-top.png" type="image/x-icon" />
+    <link href='https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL'
+        rel='stylesheet' />
 </head>
 
 <body>
+    <header>
+        <div>DB</div>
+        <div>
+            <div id="heart-header" class="heart-outer-top-right">
+                <div id="heart-top" class="heart-top-right"></div>
+            </div>
+            <div id="counter">60</div>
+        </div>
+    </header>
+
     <section id="intro" class="intro-image">
         <!-- video eller bilde -->
         <div class="intro-text">
             <h1>Vet du hvor langt unna hjelpen er når sekundene teller?</h1>
         </div>
-        <div id="heart-opacity" class="heart-outer">
-            <div id="heart" class="heart"></div>
+        <div id="heart-center" class="heart-outer-center-72px">
+            <div id="heart" class="heart-center-70px"></div>
         </div>
     </section>
 
@@ -28,7 +41,7 @@
             <!-- hjerte pos top_right  +  en counter "puls" er statisk(95)frem til en tekstboks som trigger -->
 
             <!-- Slide in animation slik at den "popper inn" -->
-            <p class="text-box">Jeg tror våre største utfordringer er avstander</p>
+            <p class="text-box video-text-box">"Jeg tror våre største utfordringer er avstandene.."</p>
         </div>
 
         <div id="case-1-1-video">
@@ -36,7 +49,7 @@
             <!-- hjerte pos top_right  +  en counter "puls" øker fra  -->
 
             <!-- Slide in animation slik at den "popper inn" -->
-            <p class="text-box">Rekker man frem i tide?</p>
+            <p class="text-box video-text-box">".. rekker man frem i tide?"</p>
         </div>
     </section>
 
@@ -45,7 +58,7 @@
         <div class="article-div">
             <img src="IMG/tonje.jpeg" alt="bilde av Tonje">
         </div>
-        <div class="article-div">
+        <div class="article-div" id="article-div-1">
             <p>Presentasjon av Tonje</p>
             <p>Tekst om sammenslåing av stasjoner</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, veritatis placeat natus iure ex ut
@@ -63,7 +76,7 @@
         <a href="XL.html">NEXT</a>
     </section>
 
-    <!-- map-->
+    <!-- INTEGRATE MAP here -->
 
 
     <div id="article-2">
@@ -110,27 +123,10 @@
         <!-- to forskjellige pos på hjertet: end_center og center_center ? -->
         <!--  puls slutter å slå -->
     </div>
+
+    <!--  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <script src="map.js"></script> -->
     <script src="script.js"></script>
 </body>
 
 </html>
-
-<!--  
-
-Hjerte som slår:
-<div id="heart-opacity" class="heart-outer">
-            <div id="heart" class="heart"></div>
-        </div>
-
-<div id="heart-opacity-end" class="heart-outer">
-    <div id="heart-end" class="heart"></div>
-</div>
-
- 
-        <!-- hjerte pos top-right-->
-<!-- Stjerne = ulykke og firkant = bil -->
-<!-- Ikoner dukker opp når man scroller-->
-<!-- Tekstbokser over som fører en samtale over Kart som er fixed på bakgrunnen-->
-<!--</section>
-
--->

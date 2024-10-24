@@ -1,6 +1,15 @@
-/**************** Element: Hjerte ****************/
 
-.heart-outer {
+/*********** Hjertet, m. størrelse og posisjoner ****************/
+/**** Hjerte i senter av skjermen *****/
+.heart-center-70px {
+    background-color: var(--red);
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 0 12rem var(--red));
+    border-radius: 50%;
+}
+
+.heart-outer-center-72px {
     background-color: var(--red-opacity);
     width: 72px;
     height: 72px;
@@ -16,18 +25,42 @@
     top: 50%;
     left: calc(50% - 35px);
 }
-.heart { 
-    background-color: var(--red);
-    width: 70px;
-    height: 70px;
-    filter: drop-shadow(0 0 12rem var(--red));
 
+/**** Hjerte oppe i høyre hjørne *****/
+.heart-top-right {
+    background-color: var(--red);
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 6rem var(--red));
     border-radius: 50%;
+
 }
 
-/**************** Animasjon: Hjerte som slår ****************/
+.heart-outer-top-right {
+    background-color: var(--red-opacity);
+    width: 32px;
+    height: 32px;
 
-#heart-opacity {
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(5px);
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+/**************** Animasjon: "Hjertet" som slår ****************/
+
+#heart-header {
+    display: none; /* start som ingen visning*/
+    animation: pulse 2s infinite;
+}
+
+#heart-center {
     animation: pulse 2s infinite;
 }
 
@@ -52,13 +85,14 @@
         opacity: 0;
         transform: scale(1);
     }
+
     100% {
         opacity: 0;
         transform: scale(1);
     }
 }
 
-/**************** Animasjon: Hjerte som slutter å slå ****************/
+/**************** Animasjon: "Hjertet" som slutter å slå ****************/
 
 #heart-opacity-end {
     opacity: 0;

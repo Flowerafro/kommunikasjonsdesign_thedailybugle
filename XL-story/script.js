@@ -7,9 +7,9 @@ function inViewport(el) {
     );
 }
 
-/* eventlistener som viser når pulse-animation er på (når id intro er i viewport) og av */
+/* eventlistener som starter og slutter heart-center  */
 document.addEventListener('scroll', function () {
-    const heartOpacity = document.getElementById("heart-opacity");
+    const heartOpacity = document.getElementById("heart-center");
 
     if (inViewport(document.getElementById("intro"))) {
         heartOpacity.style.display = "flex";
@@ -20,5 +20,17 @@ document.addEventListener('scroll', function () {
     passive: true
 });
 
+/* eventlistener som starter og slutter heart-top og counter  */
+document.addEventListener('scroll', function () {
+    const heartHeader = document.getElementById("heart-header");
+    const pulseCounter = document.getElementById("counter");
 
-
+    if (inViewport(document.getElementById("article-1"))) {
+        heartHeader.style.display = "flex";
+        pulseCounter.style.display = "block";
+    } else {
+        heartHeader.style.display = "none";
+    }
+}, {
+    passive: true
+});
