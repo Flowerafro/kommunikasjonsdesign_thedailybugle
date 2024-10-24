@@ -46,8 +46,11 @@ header {
     top: 0;
 }
 
-#counter {
-    display: none;
+.counter {
+    display: none; /* default bortgjemt*/
+}
+.counter-on {
+    display: block; /* default bortgjemt*/
     color: var(--white);
     padding-right: 3.5rem;
 }
@@ -142,12 +145,12 @@ header {
 
 /*********************************** ARTICLE ***********************************/
 
-#article-1 {
+.article {
     width: 100%;
     height: auto;
     background-color: var(--black);
     color: var(--white);
-   margin-top: 5rem;
+    margin-top: 5rem;
 
     display: flex;
     flex-direction: column;
@@ -169,4 +172,21 @@ header {
 .article-div p {
     font-size: 1.2rem;
     line-height: 1.5;
+}
+
+.btn-to-site {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.btn-site {
+    border: none;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 5px;
+    padding: 1rem;
 }

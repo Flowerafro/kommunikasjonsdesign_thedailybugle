@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="pulse.css">
     <link rel="stylesheet" href="map.css">
     <link rel="icon" href="IMG/ambulanse-top.png" type="image/x-icon" />
-    <link href='https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL'
-        rel='stylesheet' />
 </head>
 
 <body>
@@ -20,7 +18,7 @@
             <div id="heart-header" class="heart-outer-top-right">
                 <div id="heart-top" class="heart-top-right"></div>
             </div>
-            <div id="counter">60</div>
+            <div id="counter" class="counter">60</div>
         </div>
     </header>
 
@@ -54,7 +52,7 @@
     </section>
 
 
-    <section id="article-1">
+    <section id="article-1" class="article">
         <div class="article-div">
             <img src="IMG/tonje.jpeg" alt="bilde av Tonje">
         </div>
@@ -70,22 +68,30 @@
         <!-- buffer boks? -->
         <!-- class-article: svart bakgrunn tekst left og padding -->
         <!-- hjerte pos top-right-->
-    </section>
 
-    <section>
-        <a href="XL.html">NEXT</a>
+        <div class="btn-to-site">
+            <a href="XL.html" class="btn-site">Se hendelsen her</a>
+        </div>
     </section>
 
     <!-- INTEGRATE MAP here -->
 
-
-    <div id="article-2">
+    <section id="article-2" class="article">
         <!-- artikkel del 2 -->
         <!-- buffer boks? -->
         <!-- med en klokke som tikker -->
         <!-- class-article: svart bakgrunn tekst left og padding -->
         <!-- hjerte pos top-right-->
-    </div>
+
+        <div class="article-div" id="article-div-2">
+            <p>Artikkel fortsetter..</p>
+            <p>Tekst om sammenslåing av stasjoner</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, veritatis placeat natus iure ex ut
+                quisquam, doloremque quam adipisci voluptatum suscipit cum, dolorum non veniam quis animi nulla
+                perspiciatis minus eos quae illum quaerat! Ducimus facilis iure nulla accusantium accusamus reiciendis
+                cumque fuga, nemo corporis saepe! Rem adipisci voluptas officiis?</p>
+        </div>
+    </section>
 
     <div id="case-2">
         <div id="case-2-image">
@@ -94,7 +100,6 @@
             <!-- hjerte pos top_right -->
         </div>
     </div>
-
 
     <div id="article-3">
         <!-- artikkel del 3 -->
@@ -124,7 +129,7 @@
         <!--  puls slutter å slå -->
     </div>
 
-    <!--  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <!-- <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <script src="map.js"></script> -->
     <script src="script.js"></script>
 </body>

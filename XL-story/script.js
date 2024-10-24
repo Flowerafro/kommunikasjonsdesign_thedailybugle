@@ -27,7 +27,7 @@ document.addEventListener('scroll', function () {
 
     if (inViewport(document.getElementById("article-1"))) {
         heartHeader.style.display = "flex";
-        pulseCounter.style.display = "block";
+        pulseCounter.classList.add = "counter-on";
     } else {
         heartHeader.style.display = "none";
     }

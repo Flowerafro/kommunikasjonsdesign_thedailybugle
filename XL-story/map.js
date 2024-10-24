@@ -2,20 +2,18 @@
 
 const map = new maplibregl.Map({
     container: 'map',
-    style:
-        'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+    style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
     center: [10.72627, 59.65984],
-    zoom: 18,
+    zoom: 16,
     bearing: 0,
     pitch: 0
 });
-
 const chapters = {
     'amk-sentral': {
         center: [10.72627, 59.65984],
         bearing: 0,
-        pitch: 20,
-        zoom: 11
+        pitch: 0,
+        zoom: 7
     },
     'amk-saetre': {
         center: [10.20585, 59.74396],
@@ -30,7 +28,7 @@ const chapters = {
         zoom: 17
     },
     'amk-aas-ut': {
-        center: [10.72509, 59.65985],
+        center: [10.77619, 59.66498],
         bearing: 0,
         pitch: 20,
         zoom: 13
@@ -89,7 +87,6 @@ function setActiveChapter(chapterName) {
 
     activeChapterName = chapterName;
 }
-
 function isElementOnScreen(id) {
     const element = document.getElementById(id);
     const bounds = element.getBoundingClientRect();
