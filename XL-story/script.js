@@ -1,3 +1,21 @@
+let pulse = 60;
+const maxPulse = 240;
+const incrementPulse = 1; // Increment by 1 each interval
+const intervalTime = 2000; // Interval time in milliseconds (adjust as needed)
+
+function updateCount() {
+    if (pulse < maxPulse) {
+        pulse += incrementPulse;
+        document.getElementById("counter").innerHTML = Math.min(Math.floor(pulse), maxPulse);
+    } else {
+        clearInterval(counterInterval); // Stop the interval when maxPulse is reached
+    }
+}
+
+// Starter pulstelleren
+const counterInterval = setInterval(updateCount, intervalTime);
+
+
 /* Sjekker om noe er i viewport (For å skru av hjerte-animasjon) */
 function inViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -27,7 +45,7 @@ document.addEventListener('scroll', function () {
 
     if (inViewport(document.getElementById("article-1"))) {
         heartHeader.style.display = "flex";
-        pulseCounter.style.display = "block";
+        pulseCounter.style.display = "flex";
     } else {
         heartHeader.style.display = "none";
         pulseCounter.style.display = "none";

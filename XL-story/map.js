@@ -8,7 +8,7 @@ const map = new maplibregl.Map({
     bearing: 0,
     pitch: 0
 });
-const chapters = {
+const places = {
     'amk-sentral': {
         center: [10.72627, 59.65984],
         bearing: 0,
@@ -31,7 +31,7 @@ const chapters = {
         center: [10.72344, 59.65897],
         bearing: 0,
         pitch: 20,
-        zoom: 16
+        zoom: 15
     },
     'tofte-sepsis': {
         center: [10.53206, 59.53686],
@@ -52,15 +52,16 @@ const chapters = {
         zoom: 15
     },
 };
-/* Funksjon som lager markører og pop-up info*/
+/******************* * Funksjon som lager markører og pop-up info *******************/
 
 function makeMarker(lngLat, imageUrl, popupText) {
     const mark = document.createElement('div');
     mark.style.backgroundImage = `url(${imageUrl})`;
     mark.style.backgroundSize = 'cover';
+    mark.style.backgroundPosition = 'center';
     mark.style.width = '50px';
     mark.style.height = '50px';
-    mark.style.borderRadius = '50%';
+    /*     mark.style.borderRadius = '50%'; */
     mark.style.cursor = 'pointer';
 
     const popup = new maplibregl.Popup({ offset: 25 }).setText(popupText);
@@ -68,7 +69,7 @@ function makeMarker(lngLat, imageUrl, popupText) {
     new maplibregl.Marker({ element: mark }).setLngLat(lngLat).setPopup(popup).addTo(map);
 }
 
-/* Markører med custom img og popups*/
+/****************** Markører med custom img og popups *****************************/
 
 makeMarker([10.72627, 59.65984], 'IMG/sentral.png', 'Ambulansesentralen i Ås');
 makeMarker([10.20585, 59.74396], 'IMG/amkbil.png', 'Ambulanse som tilhører Sætre, på oppdrag i Drammen');
@@ -78,37 +79,31 @@ makeMarker([10.53206, 59.53686], 'IMG/pasient.png', 'Kvinnen med sepsis, bor i T
 makeMarker([10.53359, 59.53704], 'IMG/amkbil2.png', 'Første ambulanse fra Ås, ankommet kvinnen i Tofte.');
 makeMarker([10.55302, 59.54466], 'IMG/pasient2.png', 'Mannen med hjerteinfarkt, bor 7 minutter unna kvinnen med sepsis i Tofte.');
 
-/* const markerSentral = new maplibregl.Marker().setLngLat([10.72627, 59.65984]).addTo(map);
-const markerAmkSatre = new maplibregl.Marker().setLngLat([10.20585, 59.74396]).addTo(map);
-const markerAmkAas1 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
-const markerAmkAas2 = new maplibregl.Marker().setLngLat([10.72509, 59.65985]).addTo(map);
-const markerSepsis = new maplibregl.Marker().setLngLat([10.53206, 59.53686]).addTo(map);
-const markerHjerte = new maplibregl.Marker().setLngLat([10.55302, 59.54466]).addTo(map); */
 
-/* For hver scroll, sjekk hvilket el som er i skjermen */
+/******************* * For hver scroll, sjekk hvilket el som er i skjermen **************/
 window.onscroll = function () {
-    const chapterNames = Object.keys(chapters);
-    for (let i = 0; i < chapterNames.length; i++) {
-        const chapterName = chapterNames[i];
-        if (isElementOnScreen(chapterName)) {
-            console.log(`Chapter on screen: ${chapterName}`);
-            setActiveChapter(chapterName);
+    const placeNames = Object.keys(places);
+    for (let i = 0; i < placeNames.length; i++) {
+        const placeName = placeNames[i];
+        if (isElementOnScreen(placeName)) {
+            console.log(`Chapter on screen: ${placeName}`);
+            setActiveChapter(placeName);
             break;
         }
     }
 };
 
-/* Setter aktivt element og stilsetter */
-let activeChapterName = 'amk-sentral';
-function setActiveChapter(chapterName) {
-    if (chapterName === activeChapterName) return;
+/******************** * Setter aktivt element og stilsetter ***************************/
+let activePlaceName = 'amk-sentral';
+function setActiveChapter(placeName) {
+    if (placeName === activePlaceName) return;
 
-    map.flyTo(chapters[chapterName]);
+    map.flyTo(places[placeName]);
 
-    document.getElementById(chapterName).classList.add('active');
-    document.getElementById(activeChapterName).classList.remove('active');
+    document.getElementById(placeName).classList.add('active');
+    document.getElementById(activePlaceName).classList.remove('active');
 
-    activeChapterName = chapterName;
+    activePlaceName = placeName;
 }
 function isElementOnScreen(id) {
     const element = document.getElementById(id);

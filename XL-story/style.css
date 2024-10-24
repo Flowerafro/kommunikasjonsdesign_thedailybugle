@@ -38,8 +38,6 @@ header {
 
     display: flex;
     justify-content: space-between;
-
-    background-color: rgba(0, 0, 0, 0.8);
     color: var(--white);
 
     position: fixed;
@@ -47,13 +45,8 @@ header {
     z-index: 1000;
 }
 
-.counter-on {
-    display: none; /* default bortgjemt*/
-    color: var(--white);
-}
-
 #counter {
-    display: block;
+    display: none; /* gjemme den som default, blir skrudd på av EventListner*/
     color: var(--white);
     padding-right: 3rem;
 }
@@ -192,6 +185,7 @@ header {
 
 .btn-site {
     border: none;
+    width: 100%;
     text-decoration: none;
     color: var(--white);
     background-color: var(--red);
