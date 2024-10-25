@@ -1,10 +1,10 @@
 function isInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
-        (rect.top <= 0 && rect.bottom >= 0) || 
+        (rect.top <= 0 && rect.bottom >= 0) ||
         (rect.top >= 0 && rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth))
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth))
 
     );
 }
@@ -25,4 +25,14 @@ document.addEventListener('scroll', function () {
     }
 }, {
     passive: true
+});
+
+//EVENTLISTENER TO ZOOM
+
+window.addEventListener('scroll', function () {
+    const img = document.getElementById('img01');
+    const scrollPosition = window.scrollY;
+    const scaleFactor = 1 + scrollPosition / 1000; // Adjust the divisor to control the zoom speed
+
+    img.style.transform = `scale(${scaleFactor})`;
 });
