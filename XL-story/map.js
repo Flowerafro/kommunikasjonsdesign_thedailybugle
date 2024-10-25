@@ -1,10 +1,19 @@
 /*******   Kart fra mapLibre  ********/
 
+
+/*
+
+1. nærme zoom av sepsis i Tofte (og se Sætre) 
+2. zoom ut så syns Drammen
+3. zoom ut så syns Drammen, Ås og Tofte
+4. pins (markør) på alle steder og ambulanser: går det an å han statiske tekst-bokser over pins?
+*/
+
 const map = new maplibregl.Map({
     container: 'map',
     style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
     center: [10.72627, 59.65984],
-    zoom: 16,
+    zoom: 10,
     bearing: 0,
     pitch: 0
 });
@@ -13,43 +22,43 @@ const places = {
         center: [10.72627, 59.65984],
         bearing: 0,
         pitch: 0,
-        zoom: 7
+        zoom: 10
     },
     'amk-sentral-til-saetre': {
         center: [10.20585, 59.74396],
         bearing: 0,
         pitch: 20,
-        zoom: 17
+        zoom: 10
     },
     'amk-sentral-til-aas': {
         center: [10.20585, 59.74396],
         bearing: 0,
         pitch: 20,
-        zoom: 11
+        zoom: 10
     },
     'amk-aas-ut': {
         center: [10.72344, 59.65897],
         bearing: 0,
         pitch: 20,
-        zoom: 15
+        zoom: 10
     },
     'tofte-sepsis': {
         center: [10.53206, 59.53686],
         bearing: 0,
         pitch: 20,
-        zoom: 15,
+        zoom: 10,
     },
     'amk-sentral-nymeld': {
         center: [10.53206, 59.53686],
         bearing: 0,
         pitch: 20,
-        zoom: 13
+        zoom: 10
     },
     'tofte-hjerte': {
         center: [10.55302, 59.54466],
         bearing: 0,
         pitch: 20,
-        zoom: 15
+        zoom: 8
     },
 };
 /******************* * Funksjon som lager markører og pop-up info *******************/

@@ -53,3 +53,16 @@ document.addEventListener('scroll', function () {
 }, {
     passive: true
 });
+
+/* eventlistener som starter heart end  */
+document.addEventListener('scroll', function () {
+    const heartEnd = document.getElementById("heart-center-end");
+
+    if (inViewport(document.getElementById("outro"))) {
+        heartEnd.style.display = "flex";
+    } else {
+        heartEnd.style.display = "none";
+    }
+}, {
+    passive: true
+});
