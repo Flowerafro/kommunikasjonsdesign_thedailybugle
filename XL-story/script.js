@@ -35,7 +35,7 @@ document.addEventListener('scroll', function () {
         heartOpacity.style.display = "none";
     }
 }, {
-    passive: true
+    passive: true /* betyr at nettleseren ikke vil kalle på preventDefault() */
 });
 
 /* eventlistener som starter og slutter heart-top og counter  */
