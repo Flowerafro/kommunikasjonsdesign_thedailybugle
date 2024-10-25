@@ -21,6 +21,17 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+#logo {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    
+    color:white;
+    text-decoration: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
 strong {
     font-weight: 900;
 }
@@ -159,6 +170,23 @@ hr {
     padding: 3rem 0;
 }
 
+.parallax-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* padding: 1rem; */
+    justify-content: center;
+    
+}
+
+.buffer-parallax {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
 .content {
     font-size: 1.2rem;
     line-height: 2.8rem;
@@ -171,17 +199,18 @@ hr {
 /*********************************************************************************/
 
 footer {
+    font: arial, sans-serif;
     margin: 0;
     padding: 1rem;
     position: static;
     bottom: 0;
-    width: 100%;
+    max-width: 100%;
     height: 10vh;
     background-color: #39454b;
     color: white;
     display: flex;
     justify-content: center;
-}
+  }
 
 /*********************************************************************************/
 /*    MEDIA QUERIESSS -- Desktop                                                 */
@@ -208,5 +237,18 @@ footer {
         flex-direction: column;
         justify-content: end;
         align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .parallax-box {
+        width: 90%; /* Adjust width for mobile view */
+        padding: 1rem; /* Ensure padding is consistent */
+    }
+
+    .content {
+        font-size: 1rem; /* Adjust font size for mobile view */
+        line-height: 1.5rem; /* Adjust line height for mobile view */
+        text-align: left; /* Ensure text alignment */
     }
 }

@@ -1,147 +1,155 @@
-/* style.css */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: left;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 main {
-    margin: 0 auto;
-    max-width: 60%;
-    background-color: #fff;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  max-width: 100%;
 }
 
 main img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#bildelogo {
+  position: relative;
+}
+
+#bildelogo .logo {
+  font-family: Arial, sans-serif;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 h1 {
-
-        color: black;
-        font-size: 4rem;
-        margin-bottom: 20px;
-        padding: 2rem;
-        text-align: center; /* Add this line */
-    
+  color: black;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  padding: 2rem;
+  text-align: center;
 }
 
-p {
-    
-    line-height: 2;
-    padding: 5rem;
-    font-size: 1.5rem;  
-    color: #333333;
-    padding-top: 0;
-    
+.tekst {
+  line-height: 2;
+  padding: 5rem;
+  font-size: 1.5rem;
+  color: #333333;
+  padding-top: 0;
+}
+
+.marginer {
+  margin: 0 auto;
+  max-width: 70%;
 }
 
 .bold {
-    font-weight: bold;
-    line-height: 2;
-    font-size: 2rem;  
-    color: black;
-    text-align: center;
+  font-weight: bold;
+  line-height: 2;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
 }
 
 #imgtext {
-    color: #666;
-    font-size: 1rem;
-    padding: 1rem;
-    margin-top: -2rem;
-    border-style: ridge;
+  color: #666;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-top: -2rem;
+  border-style: ridge;
 }
 
 #textimg {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
 #stats {
-    display: block;
-    margin: 0 auto;
-    max-width: 70%;
-    color: #666;
-    font-size: 1rem;
-    padding: 1rem;
-    margin-top: -2rem;
-    border-style: ridge;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  color: #666;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-top: -2rem;
+  border-style: ridge;
 }
 
 footer {
-   text-align: center;
-   padding: 1rem;
+  font: arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  position: static;
+  bottom: 0;
+  max-width: 100%;
+  height: 10vh;
+  background-color: #39454b;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1200px) {
-    main {
-        margin: 0 auto;
-        max-width: 100%;
-        
-    }
+  main {
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    main {
-        margin: 0 auto;
-    }
+  main {
+    margin: 0 auto;
+  }
 
-    h1 {
-        font-size: 3rem;
-    }
+  h1 {
+    font-size: 3rem;
+  }
 
-    header {
-        text-align: center;
-    }
+  header {
+    text-align: center;
+  }
 
-    p {
-        padding: 2rem;
-        font-size: 1.2rem;
-    }
+  p {
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
 
-    .bold {
-        font-size: 1.5rem;
-    }
+  .bold {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-    main {
-        margin: 0 auto;
-    }
+  main {
+    margin: 0 auto;
+  }
 
-    header {
-        text-align: center;
-    }
+  header {
+    text-align: center;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    p {
-        padding: 1rem;
-        font-size: 1rem;
-    }
+  p {
+    padding: 1rem;
+    font-size: 1rem;
+  }
 
-    .bold {
-        font-size: 1.2rem;
-    }
+  .bold {
+    font-size: 1.2rem;
+  }
 }
