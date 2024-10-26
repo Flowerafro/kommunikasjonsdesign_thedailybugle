@@ -46,7 +46,7 @@ document.addEventListener('scroll', function () {
         document.getElementById("background").style.backgroundImage = "url('images/11.jpg')";
     }
     if (isInViewport(document.getElementById("fourth"))) {
-        document.getElementById("background").style.backgroundImage = "url('images/25.jpg')";
+        document.getElementById("background").style.backgroundImage = "url('images/25.png')";
     }
 }, {
     passive: true
