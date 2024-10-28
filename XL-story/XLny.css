@@ -27,13 +27,14 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+
 }
 
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
 }
 
-p, a {
+figcaption, p, a {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -91,25 +92,36 @@ header a {
   height: auto;
   display: flex;
   flex-direction: column;
+  
 }
 
 .ParallaxVideo video {
   object-fit: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+
+  /* max-width: 500px;  media-query mobil - i desktop må være større */
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
+/* .video-1 {
+    z-index: -2;
+}
 
+.video-2 {
+    padding-bottom: 100vh;
+    z-index: -1;
+} */
 
 /********************************** INTRO w heart **********************************************/
 
 #intro {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
 
     display: flex;
     justify-content: center;
@@ -145,7 +157,7 @@ header a {
 
 .article {
     width: 100%;
-    height: 100vh;
+    height: auto; /* blir auto når teksten er på plass */
     background-color: var(--black);
     color: var(--white);
 
@@ -154,6 +166,12 @@ header a {
     justify-content: center;
     align-items: center;
 
+    padding-bottom: 5rem;
+}
+
+.article-div {
+    width: 70%;
+    padding: 1rem;
 }
 
 figure {
@@ -162,6 +180,18 @@ figure {
     row-template-rows: 1fr;
     margin-top: clamp(70px, calc((70 / 580)* 100vw), 100px);
     margin-bottom: clamp(70px, calc((70 / 580)* 100vw), 100px);
+
+    padding: 1rem;
+}
+
+figure figcaption {
+    grid-column: 2/3;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: left;
 }
 
 figure img {
@@ -169,6 +199,34 @@ figure img {
     height: auto;
     object-fit: cover;
     grid-column: 2/3;
+}
+
+/**************************************** VIDEO in article ******************************************************/
+
+.video-div {
+    width: 100%;
+    height: auto;
+    background-color: var(--black);
+    color: var(--white);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: red 2px solid;
+}
+
+.video-text {
+    width: 70%;
+    padding: 1rem;
+    position: absolute;
+    background-color: var(--black-opacity);
+}
+
+.video-div video {
+    max-width: 400px;
 }
 
 /*******************************************************************************************************/
@@ -470,3 +528,22 @@ figure img {
     }
   }
   
+
+/*********************************************************************************************************/
+/*                                             MEDIA QUERIES                                             */
+/*********************************************************************************************************/
+
+@media screen and (min-width: 768px) {
+
+    body {
+        max-width: 800px;
+    }
+  
+}
+
+@meda screen and (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+    }
+   
+}
