@@ -11,6 +11,9 @@
     --red: #ff0000;
     --red-opacity: rgba(255, 0, 0, 0.5);
     --green: #A7C399;
+
+    --dark-grey: #2a272a;
+    --grey-purple: #4b4a54;
 }
 
 * {
@@ -70,12 +73,12 @@ header a {
     text-align: center;
     letter-spacing: 1px;
     position: relative;
-    width: 70%;
+    width: 75%;
     margin: 50vh auto; /* mellomrom mellom headlines*/
 }
 
 .headline h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
@@ -102,12 +105,11 @@ header a {
 
 
 
-/********************************** INTRO **********************************************/
+/********************************** INTRO w heart **********************************************/
 
 #intro {
     width: 100%;
     height: 100vh;
-    background-color: var(--black);
 
     display: flex;
     justify-content: center;
@@ -115,10 +117,6 @@ header a {
 
     z-index: 100;
 }
-
-
-
-/*************************************** HEART PULSE ***************************************/
 
 /**** Hjerte oppe i høyre hjørne *****/
 .heart-center-70px {
@@ -142,6 +140,42 @@ header a {
 #heart-center {
     animation: pulse 2s infinite;
 }
+
+/**************************************** ARTICLE ******************************************************/
+
+.article {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+figure {
+    display: grid;
+    grid-template-columns: 2% 1fr 2%;
+    row-template-rows: 1fr;
+    margin-top: clamp(70px, calc((70 / 580)* 100vw), 100px);
+    margin-bottom: clamp(70px, calc((70 / 580)* 100vw), 100px);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    grid-column: 2/3;
+}
+
+/*******************************************************************************************************/
+/*                                             KEYFRAMES                                               */
+/*******************************************************************************************************/
+
+/*************************************** HEART PULSE **********************************************/
 
 @keyframes pulse {
     0% {
@@ -169,3 +203,270 @@ header a {
         transform: scale(1);
     }
 }
+
+
+/*************************************** gradient keyframe **********************************************/
+
+@keyframes hero-gradient-animation {
+    0% {
+        --c-0: hsla(232.5, 0%, 0%, 1);
+        --x-0: 91%;
+        --y-0: 90%;
+        --s-start-0: 1%;
+        --s-end-0: 61%;
+        --s-start-1: 0%;
+        --s-end-1: 55%;
+        --y-1: 24%;
+        --x-1: 17%;
+        --c-1: hsla(75, 0%, 0%, 1);
+        --s-start-2: 19%;
+        --s-end-2: 54%;
+        --y-2: 32%;
+        --x-2: 11%;
+        --c-2: hsla(232.5, 25%, 12%, 1);
+        --y-3: 31%;
+        --s-start-3: 0%;
+        --s-end-3: 67%;
+        --x-3: 2%;
+        --c-3: hsla(254.00000000000034, 4%, 40%, 1);
+        --c-4: hsla(349, 0%, 0%, 1);
+        --x-4: 74%;
+        --y-4: 93%;
+        --s-start-4: 12%;
+        --s-end-4: 82%;
+    }
+
+    100% {
+        --c-0: hsla(232.50000000000048, 9%, 28%, 1);
+        --x-0: 49%;
+        --y-0: 25%;
+        --s-start-0: 19%;
+        --s-end-0: 69%;
+        --s-start-1: 3%;
+        --s-end-1: 77%;
+        --y-1: 41%;
+        --x-1: 1%;
+        --c-1: hsla(241.99999999999886, 10%, 23%, 1);
+        --s-start-2: 6%;
+        --s-end-2: 73%;
+        --y-2: 93%;
+        --x-2: 44%;
+        --c-2: hsla(321, 0%, 0%, 1);
+        --y-3: 51%;
+        --s-start-3: 8%;
+        --s-end-3: 86%;
+        --x-3: 97%;
+        --c-3: hsla(246.17647058823542, 10%, 23%, 1);
+        --c-4: hsla(232.5, 19%, 16%, 1);
+        --x-4: 10%;
+        --y-4: 69%;
+        --s-start-4: 20%;
+        --s-end-4: 75%;
+    }
+}
+
+@property --c-0 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(232.5, 0%, 0%, 1)
+}
+
+@property --x-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 91%
+}
+
+@property --y-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 90%
+}
+
+@property --s-start-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 1%
+}
+
+@property --s-end-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 61%
+}
+
+@property --s-start-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%
+}
+
+@property --s-end-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 55%
+}
+
+@property --y-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 24%
+}
+
+@property --x-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 17%
+}
+
+@property --c-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(75, 0%, 0%, 1)
+}
+
+@property --s-start-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 19%
+}
+
+@property --s-end-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 54%
+}
+
+@property --y-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 32%
+}
+
+@property --x-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 11%
+}
+
+@property --c-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(232.5, 25%, 12%, 1)
+}
+
+@property --y-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 31%
+}
+
+@property --s-start-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%
+}
+
+@property --s-end-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 67%
+}
+
+@property --x-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 2%
+}
+
+@property --c-3 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(254.00000000000034, 4%, 40%, 1)
+}
+
+@property --c-4 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(349, 0%, 0%, 1)
+}
+
+@property --x-4 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 74%
+}
+
+@property --y-4 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 93%
+}
+
+@property --s-start-4 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 12%
+}
+
+@property --s-end-4 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 82%
+}
+
+.black-gradient {
+    --c-0: hsla(232.5, 0%, 0%, 1);
+    --x-0: 91%;
+    --y-0: 90%;
+    --y-1: 24%;
+    --x-1: 17%;
+    --c-1: hsla(75, 0%, 0%, 1);
+    --y-2: 32%;
+    --x-2: 11%;
+    --c-2: hsla(232.5, 25%, 12%, 1);
+    --y-3: 31%;
+    --x-3: 2%;
+    --c-3: hsla(254.00000000000034, 4%, 40%, 1);
+    --c-4: hsla(349, 0%, 0%, 1);
+    --x-4: 74%;
+    --y-4: 93%;
+    ;
+    background-color: hsla(232.5, 0%, 0%, 1);
+    background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4));
+    animation: hero-gradient-animation 10s linear infinite alternate;
+    background-blend-mode: normal, normal, normal, normal, normal;
+}
+
+/*************************************** ANIMATION TEXT **********************************************/
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
