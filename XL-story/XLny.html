@@ -141,14 +141,17 @@
         </div>
     </article>
 
-    <div class="video-div">
-        <div class="video-text">
-            <p>"«Sitater eller info om sammenslåing av sykehusene i Lillehammer og Hamar»" (ikke riktig video)</p>
+    <div class="timeline">
+        <div class="images">
+            <img id="image1" src="https://placehold.co/400x500" alt="Hospitals in 2000" class="active">
+            <img id="image2" src="https://placehold.co/500x500" alt="Hospitals now">
+            <img id="image3" src="https://placehold.co/300x500" alt="Hospitals in the future">
         </div>
-
-        <video autoplay muted loop>
-            <source src="IMG/amk2.mp4" type="video/mp4" />
-        </video>
+        <div class="buttons">
+            <button onclick="showImage('image1')">FORTID</button>
+            <button onclick="showImage('image2')">NÅTID</button>
+            <button onclick="showImage('image3')">FREMTID</button>
+        </div>
     </div>
 
     <article id="article-3" class="article">
@@ -157,6 +160,7 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 soluta quod ab nulla ullam inventore ducimus modi repudiandae autem laboriosam?</p>
         </div>
+
         <figure>
             <img src="IMG/amk.jpeg" alt="bilde av amk på ulykkested">
             <figcaption>FOTO: privat </figcaption>

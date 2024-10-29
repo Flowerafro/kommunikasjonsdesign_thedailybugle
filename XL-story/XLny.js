@@ -122,7 +122,7 @@ map.on('load', () => {
             'line-join': 'round'
         },
         'paint': {
-            'line-color': '#ed6498',
+            'line-color': '#ff0000',
             'line-width': 5,
             'line-opacity': 0.8
         }
@@ -175,3 +175,16 @@ map.on('load', () => {
 });
 
 map.scrollZoom.disable();
+
+
+/************************************* timeline Images  *************************/
+
+function showImage(imageId) {
+    // Hide all images
+    const images = document.querySelectorAll('.timeline .images img');
+    images.forEach(img => img.classList.remove('active'));
+
+    // Show the selected image
+    const selectedImage = document.getElementById(imageId);
+    selectedImage.classList.add('active');
+}
