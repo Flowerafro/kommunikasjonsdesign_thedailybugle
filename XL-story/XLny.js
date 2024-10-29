@@ -15,8 +15,8 @@ map.on('load', () => {
             {
                 'type': 'Feature',
                 'properties': {
-                    'description': 'Ambulansesentral',
-                    'moreInfo': 'Ambulansesentral som dekker området Drøbak, Nesodden, Ås, Vestby og Vinterbro.',
+                    'description': 'Ås',
+                    'moreInfo': 'Ambulansesentral som dekker området Drøbak, Nesodde, Ås, Vestby og Vinterbro.',
                     'iconSize': [80, 80],
                     'iconUrl': 'IMG/hospital.png'
                 },
@@ -64,25 +64,24 @@ map.on('load', () => {
         el.style.height = `${marker.properties.iconSize[1]}px`;
         el.style.backgroundSize = '100%';
 
-        // Add click event to show more information
-        el.addEventListener('click', () => {
-            const popupContent = document.createElement('div');
-            popupContent.className = 'popup-content';
-            popupContent.innerHTML = `<p>${marker.properties.description}</p><button>Show More</button><div class="more-info"><p>${marker.properties.moreInfo}</p></div>`;
+        // Create a popup for the marker
+        const popupContent = document.createElement('div');
+        popupContent.className = 'popup-content';
+        popupContent.innerHTML = `<p>${marker.properties.description}</p><button>Les mer</button><div class="more-info" style="display: none;"><p>${marker.properties.moreInfo}</p></div>`;
 
-            const popup = new maplibregl.Popup({ closeOnClick: false, closeButton: false, offset: 25 })
-                .setLngLat(marker.geometry.coordinates)
-                .setDOMContent(popupContent)
-                .addTo(map);
+        const popup = new maplibregl.Popup({ closeOnClick: false, closeButton: true, offset: 25 })
+            .setLngLat(marker.geometry.coordinates)
+            .setDOMContent(popupContent)
+            .addTo(map);
 
-            popupContent.querySelector('button').addEventListener('click', () => {
-                const moreInfoDiv = popupContent.querySelector('.more-info');
-                if (moreInfoDiv.style.display === 'none' || moreInfoDiv.style.display === '') {
-                    moreInfoDiv.style.display = 'block';
-                } else {
-                    moreInfoDiv.style.display = 'none';
-                }
-            });
+        // Add click event to toggle more information
+        popupContent.querySelector('button').addEventListener('click', () => {
+            const moreInfoDiv = popupContent.querySelector('.more-info');
+            if (moreInfoDiv.style.display === 'none' || moreInfoDiv.style.display === '') {
+                moreInfoDiv.style.display = 'block';
+            } else {
+                moreInfoDiv.style.display = 'none';
+            }
         });
 
         // Add marker to map
@@ -90,5 +89,86 @@ map.on('load', () => {
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
     });
+
+    // Create a GeoJSON source with an empty LineString
+    const lineGeoJSON = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': []
+                }
+            }
+        ]
+    };
+
+    map.addSource('line', {
+        'type': 'geojson',
+        'data': lineGeoJSON
+    });
+
+    // Add the line which will be modified in the animation
+    map.addLayer({
+        'id': 'line-animation',
+        'type': 'line',
+        'source': 'line',
+        'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+        },
+        'paint': {
+            'line-color': '#ed6498',
+            'line-width': 5,
+            'line-opacity': 0.8
+        }
+    });
+
+    const path = [
+        [10.72594, 59.65978], /* start: Ås */
+        [10.73797, 59.70663], /* til oslofjordstunnellen */
+        [10.62395, 59.67029], /* inn Oslofjordstunnellen */
+        [10.58817, 59.65431], /* ut av Oslofjordstunellen*/
+        [10.60929, 59.57867], /* på vei til Tofte */
+        [10.55771, 59.54146] /* Ankomst Tofte / Ulykkested*/
+    ];
+    const speedFactor = 0.005; // Decreased speed factor to slow down the animation
+
+    let animation;
+    let progress = 0;
+
+    function animateLine(timestamp) {
+        progress += speedFactor;
+        if (progress > 1) {
+            progress = 1;
+        }
+
+        const segmentIndex = Math.floor(progress * (path.length - 1));
+        const segmentProgress = (progress * (path.length - 1)) - segmentIndex;
+
+        const start = path[segmentIndex];
+        const end = path[segmentIndex + 1];
+
+        const currentPosition = [
+            start[0] + (end[0] - start[0]) * segmentProgress,
+            start[1] + (end[1] - start[1]) * segmentProgress
+        ];
+
+        lineGeoJSON.features[0].geometry.coordinates.push(currentPosition);
+        map.getSource('line').setData(lineGeoJSON);
+
+        if (progress < 1) {
+            animation = requestAnimationFrame(animateLine);
+        }
+    }
+
+    // Start animation on button click
+    document.getElementById('start-animation').addEventListener('click', () => {
+        progress = 0;
+        lineGeoJSON.features[0].geometry.coordinates = [];
+        animateLine();
+    });
 });
 
+map.scrollZoom.disable();
