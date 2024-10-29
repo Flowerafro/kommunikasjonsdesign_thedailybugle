@@ -5,15 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
+    /*COLOR*/
     --black: #000;
     --black-opacity: rgba(0, 0, 0, 0.5);
     --white: #fff;
     --red: #ff0000;
     --red-opacity: rgba(255, 0, 0, 0.5);
     --green: #A7C399;
-
     --dark-grey: #2a272a;
     --grey-purple: #4b4a54;
+
+    /*FONT*/
+
+    --font-family: 'poppins', sans-serif;
+    --font-family-small: 'Open Sans', sans-serif;
+    --font-size-headline: clamp(32px, calc((36 / 580) * 100vw), 45px); /* min, preferred, max */
+    --font-size-text: clamp(21px, calc((26 / 580) * 100vw), 30px);
+    --font-size-headline-700: clamp(32px, calc((36 / 700) * 100vw), 45px); /* min, preferred, max for iPad */
+    --font-size-text-700: clamp(21px, calc((26 / 700) * 100vw), 30px);
+    --font-size-headline-1200: clamp(32px, calc((36 / 1200) * 100vw), 45px); /* min, preferred, max for desktop */
+    --font-size-text-1200: clamp(21px, calc((26 / 1200) * 100vw), 30px); 
 }
 
 * {
@@ -31,11 +42,11 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
 }
 
 figcaption, p, a {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-family-small);
 }
 
 header {
@@ -53,7 +64,7 @@ header {
 header a {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: var(--font-size-text);
     font-weight: 700;
 }
 
@@ -68,54 +79,47 @@ header a {
 }
 
 .headline {
-    background-color: var(--black-opacity);
-    padding: 1rem;
+    /* background-color: var(--black-opacity); */
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
     color: var(--white);
-    text-align: center;
+    text-align: left;
     letter-spacing: 1px;
     position: relative;
-    width: 75%;
+    width: 60%;
     margin: 50vh auto; /* mellomrom mellom headlines*/
 }
 
 .headline h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: var(--font-size-headline);
+    font-weight: 400;
 }
 
 .headline p {
-    font-size: 1.3rem;
+    font-size: var(--font-size-text);
 }
 
 /* Video Parallax Section*/
-.ParallaxVideo {
+.parallaxVideo {
   height: auto;
+  max-height: 250vh;
   display: flex;
   flex-direction: column;
-  
 }
 
-.ParallaxVideo video {
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
+.parallaxVideo video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -999;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
 
   /* max-width: 500px;  media-query mobil - i desktop må være større */
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  
 }
-
-/* .video-1 {
-    z-index: -2;
-}
-
-.video-2 {
-    padding-bottom: 100vh;
-    z-index: -1;
-} */
 
 /********************************** INTRO w heart **********************************************/
 
@@ -127,6 +131,8 @@ header a {
     justify-content: center;
     align-items: center;
 
+    padding: 5rem 0;
+
     z-index: 100;
 }
 
@@ -135,18 +141,16 @@ header a {
     background-color: var(--red);
     width: 70px;
     height: 70px;
-    filter: drop-shadow(0 0 12rem var(--red));
+    filter: drop-shadow(0 0 15rem var(--red));
     border-radius: 50%;
 }
 
 .heart-outer-center-72px {
     background-color: var(--red-opacity);
-    width: 72px;
-    height: 72px;
-
-    border-radius: 50%;
-
+    width: 75px;
+    height: 75px;
     filter: blur(10px);
+    border-radius: 50%;
 }
 
 #heart-center {
@@ -166,7 +170,7 @@ header a {
     justify-content: center;
     align-items: center;
 
-    padding-bottom: 5rem;
+    padding: 5rem 0;
 }
 
 .article-div {
@@ -199,6 +203,14 @@ figure img {
     height: auto;
     object-fit: cover;
     grid-column: 2/3;
+}
+
+/************************************************ MAP *******************************************************/
+
+.map-section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
 }
 
 /**************************************** VIDEO in article ******************************************************/
@@ -286,7 +298,7 @@ figure img {
         --s-start-3: 0%;
         --s-end-3: 67%;
         --x-3: 2%;
-        --c-3: hsla(254.00000000000034, 4%, 40%, 1);
+        --c-3:  hsla(240, 100%, 10%, 1);
         --c-4: hsla(349, 0%, 0%, 1);
         --x-4: 74%;
         --y-4: 93%;
@@ -295,7 +307,7 @@ figure img {
     }
 
     100% {
-        --c-0: hsla(232.50000000000048, 9%, 28%, 1);
+        --c-0:  hsla(240, 100%, 10%, 1);
         --x-0: 49%;
         --y-0: 25%;
         --s-start-0: 19%;
@@ -304,7 +316,7 @@ figure img {
         --s-end-1: 77%;
         --y-1: 41%;
         --x-1: 1%;
-        --c-1: hsla(241.99999999999886, 10%, 23%, 1);
+        --c-1:hsla(240, 100%, 20%, 1);
         --s-start-2: 6%;
         --s-end-2: 73%;
         --y-2: 93%;
@@ -314,7 +326,7 @@ figure img {
         --s-start-3: 8%;
         --s-end-3: 86%;
         --x-3: 97%;
-        --c-3: hsla(246.17647058823542, 10%, 23%, 1);
+        --c-3: hsla(0, 0%, 0%, 1); 
         --c-4: hsla(232.5, 19%, 16%, 1);
         --x-4: 10%;
         --y-4: 69%;
@@ -440,7 +452,7 @@ figure img {
 @property --c-3 {
     syntax: '<color>';
     inherits: false;
-    initial-value: hsla(254.00000000000034, 4%, 40%, 1)
+    initial-value:  hsla(240, 100%, 10%, 1);
 }
 
 @property --c-4 {
@@ -485,7 +497,7 @@ figure img {
     --c-2: hsla(232.5, 25%, 12%, 1);
     --y-3: 31%;
     --x-3: 2%;
-    --c-3: hsla(254.00000000000034, 4%, 40%, 1);
+    --c-3:  hsla(240, 100%, 10%, 1);
     --c-4: hsla(349, 0%, 0%, 1);
     --x-4: 74%;
     --y-4: 93%;

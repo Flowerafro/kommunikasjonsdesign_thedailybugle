@@ -7,6 +7,20 @@
     <title>XL-story</title>
     <link rel="stylesheet" href="XLny.css">
     <link rel="icon" href="IMG/amkbil.png" type="image/x-icon" />
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body,
+        #map {
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +28,7 @@
         <a href="/landingsside/index.html" id="logo">DB</a>
     </header>
 
-    <section class="ParallaxVideo">
+    <section class="parallaxVideo">
         <video autoplay muted loop>
             <source src="IMG/amk.mov" type="video/mp4" />
         </video>
@@ -22,13 +36,14 @@
 
     <section id="headlines">
         <div class="headline">
-            <h1 class="text-focus-in">Vet du hvor hjelpen er når sekundene teller?</h1>
+            <h1 class="text-focus-in">Hovedtittel</h1>
         </div>
         <div class="headline">
-            <p>"Jeg tror våre største utfordringer er avstandene.."</p>
+            <p>"Første sitat som oppsummerer saken"</p>
         </div>
         <div class="headline">
-            <p>".. rekker vi frem i tide?"</p>
+            <p>".. et sitat som fanger inn leseren og som hinter om pulserende rød sirkel som dukker opp rett under?"
+            </p>
         </div>
     </section>
 
@@ -40,7 +55,7 @@
 
     <article id="article-1" class="article">
         <div class="article-div">
-            <h2> ny tittel</h2>
+            <h2> Kort introtekst om temaet sentralisering</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 soluta quod ab nulla ullam inventore ducimus modi repudiandae autem laboriosam?</p>
         </div>
@@ -50,18 +65,19 @@
         </figure>
         <div class="article-div">
             <h2>presentasjon av Tonje</h2>
-            <p> Kort introtekst om temaet sentralisering , Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Temporibus, veritatis placeat natus iure ex ut
                 quisquam, doloremque quam adipisci voluptatum suscipit cum, dolorum non veniam quis animi nulla
                 perspiciatis minus eos quae illum quaerat! Ducimus facilis iure nulla accusantium accusamus reiciendis
                 cumque fuga, nemo corporis saepe! Rem adipisci voluptas officiis?</p>
-            <p>Kort intro til situasjonen tilknyttet kartet</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, nostrum impedit nesciunt excepturi
+                tempora illum officia omnis reprehenderit quibusdam magnam!</p>
         </div>
-        <p>KART INN HER</p>
+        <p>innledning til situasjonen som er tilknyttet kartet</p>
     </article>
 
-    <section>
-        <!-- MAP -->
+    <section class="map-section">
+        <div id="map"></div>
     </section>
 
     <article id="article-2" class="article">
@@ -147,6 +163,7 @@
         </div>
     </article>
 
+    <script src="XLny.js"></script>
 </body>
 
 </html>
