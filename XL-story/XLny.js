@@ -180,11 +180,9 @@ map.scrollZoom.disable();
 /************************************* timeline Images  *************************/
 
 function showImage(imageId) {
-    // Hide all images
     const images = document.querySelectorAll('.timeline .images img');
     images.forEach(img => img.classList.remove('active'));
 
-    // Show the selected image
     const selectedImage = document.getElementById(imageId);
     selectedImage.classList.add('active');
 }

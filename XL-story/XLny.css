@@ -100,6 +100,8 @@ header a {
 
 /* Video Parallax Section*/
 .parallaxVideo {
+    width: 100%;
+    max-width: 500px;
   height: auto;
   max-height: 250vh;
   display: flex;
@@ -174,6 +176,7 @@ header a {
 
 .article-div {
     width: 70%;
+    max-width: 500px;
     padding: 1rem;
 }
 
@@ -183,7 +186,6 @@ figure {
     row-template-rows: 1fr;
     margin-top: clamp(70px, calc((70 / 580)* 100vw), 100px);
     margin-bottom: clamp(70px, calc((70 / 580)* 100vw), 100px);
-
     padding: 1rem;
 }
 
@@ -199,6 +201,7 @@ figcaption {
 
 figure img {
     width: 100%;
+    max-width: 500px;
     height: auto;
     object-fit: cover;
     grid-column: 2/3;
@@ -336,7 +339,8 @@ figure img {
 .timeline .images img {
     display: none;
     width: 100%;
-    height: 500px;
+    max-width: 500px;
+    height: auto;
 }
 
 .timeline .images img.active {
@@ -346,7 +350,7 @@ figure img {
 
 .buttons{
     position: absolute;
-    left: 0;
+    left: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -670,15 +674,22 @@ figure img {
 
 @media screen and (min-width: 768px) {
 
-    body {
-        max-width: 800px;
-    }
+.headline {
+    text-align: center;
+}
   
+.timeline .images img {
+    max-width: 800px;
 }
 
-@meda screen and (min-width: 1024px) {
-    body {
-        max-width: 1200px;
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .video-text {
+        width: 20%;
     }
    
 }
