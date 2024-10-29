@@ -238,20 +238,23 @@ figure img {
 }
 
 .popup-content {
-    padding: 10px;
+    padding: 5px;
+    max-width: 100px;
     background-color: #fff;
     border-radius: 8px;
+    transition: all 1s ease;
 }
 
 .popup-content p {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
+    text-wrap: wrap;
 }
 
 .popup-content button {
     margin-top: 10px;
-    padding: 5px 10px;
+    padding: 5px;
     background-color: var(--green);
     color: #fff;
     border: none;
@@ -261,18 +264,31 @@ figure img {
 
 .popup-content .more-info {
     margin-top: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: #f9f9f9;
     border-top: 1px solid #ddd;
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
 }
 
 .popup-content .more-info p {
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
 }
 
+.popup-content .more-info.show {
+    max-height: 200px; /* Adjust as needed */
+    opacity: 1;
+    overflow: scroll;
+}
+
+.maplibregl-popup-close-button {
+    padding: 5px;
+    font-size: 20px;
+}
 /**************************************** VIDEO in article ******************************************************/
 
 .video-div {

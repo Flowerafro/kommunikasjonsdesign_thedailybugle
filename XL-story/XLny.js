@@ -67,27 +67,30 @@ map.on('load', () => {
         // Create a popup for the marker
         const popupContent = document.createElement('div');
         popupContent.className = 'popup-content';
-        popupContent.innerHTML = `<p>${marker.properties.description}</p><button>Les mer</button><div class="more-info" style="display: none;"><p>${marker.properties.moreInfo}</p></div>`;
+        popupContent.innerHTML = `<p>${marker.properties.description}</p><button>Les mer</button><div class="more-info"><p>${marker.properties.moreInfo}</p></div>`;
 
         const popup = new maplibregl.Popup({ closeOnClick: false, closeButton: true, offset: 25 })
-            .setLngLat(marker.geometry.coordinates)
             .setDOMContent(popupContent)
+            .setLngLat(marker.geometry.coordinates)
             .addTo(map);
 
         // Add click event to toggle more information
         popupContent.querySelector('button').addEventListener('click', () => {
             const moreInfoDiv = popupContent.querySelector('.more-info');
-            if (moreInfoDiv.style.display === 'none' || moreInfoDiv.style.display === '') {
-                moreInfoDiv.style.display = 'block';
-            } else {
-                moreInfoDiv.style.display = 'none';
-            }
+            moreInfoDiv.classList.toggle('show');
         });
 
         // Add marker to map
-        new maplibregl.Marker({ element: el })
+        const markerElement = new maplibregl.Marker({ element: el })
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
+
+        // Add click event to the marker to open the popup and show more information
+        markerElement.getElement().addEventListener('click', () => {
+            popup.setLngLat(marker.geometry.coordinates).addTo(map);
+            const moreInfoDiv = popupContent.querySelector('.more-info');
+            moreInfoDiv.classList.add('show');
+        });
     });
 
     // Create a GeoJSON source with an empty LineString
