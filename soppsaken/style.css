@@ -350,7 +350,7 @@ hr {
 
     #forest-break {
         height: 700px;
-        margin-bottom: 0;
+        margin-bottom: -1rem;
     }
 
     /* ---------- Section: mushroom info -------------- */

@@ -25,7 +25,7 @@ const mushroomData = [
     {
         id: 1,
         type: "Giftig",
-        src: "IMG/rodfluesopp.png",
+        src: "IMG/fluesopp_hvitkant.png",
         name: "Rød fluesopp",
         info: "Amanita muscaria, er en stilksporesopp av slekten Amanita. Navnet kommer fra dens bruk som insektmiddel. Rød fluesopp er giftig og gir sterke magesmerter og brekninger, og kan dessuten gi hallusinasjoner. Den inneholder ibotensyre, muskimol og muskazon, som aktive prinsipp. ",
         alt: "fluesopp"
@@ -33,7 +33,7 @@ const mushroomData = [
     {
         id: 2,
         type: "Giftig",
-        src: "IMG/hvitfluesopp.png",
+        src: "IMG/hvitfluesopp_hvitkant.png",
         name: "Hvit fluesopp",
         info: "Amanita virosa, er en av de farligste av våre giftige sopper. Hvit fluesopp inneholder gift som angriper lever og nyrer. Hvit fluesopp kan forveksles med hvite sjampinjonger; men sjampinjonger har mørke sporer som gjør at skivene blir grårosa til svartbrune. ",
         alt: "hvitfluesopp"
@@ -41,7 +41,7 @@ const mushroomData = [
     {
         id: 3,
         type: "Giftig",
-        src: "IMG/spissgiftslorsopp.png",
+        src: "IMG/spissgiftslørsopp_hvitkant.png",
         name: "Spiss Giftslørsopp",
         info: "Cortinarius rubellus,er en sopp som hører til slekten slørsopper. Den er dødelig giftig og angriper nyrene. Forgiftningssymptomene kommer ofte etter 2–3 dager eller mer. ",
         alt: "spissgiftslorsopp"
@@ -57,7 +57,7 @@ const mushroomData = [
     {
         id: 5,
         type: "Ikke-giftig",
-        src: "IMG/steinsopp.png",
+        src: "IMG/steinsopp_hvitkant.png",
         name: "Steinsopp",
         info: "Boletus edulis, tilhører rørsoppfamilien og regnes som som en av de beste matsoppene. Steinsopp vokser i løv- og barskog, og har sesong i Norge fra juni til september.  ",
         alt: "steinsopp"
@@ -65,7 +65,7 @@ const mushroomData = [
     {
         id: 6,
         type: "Ikke-giftig",
-        src: "IMG/kantarell.png",
+        src: "IMG/kantarell_hvitkant.png",
         name: "Kantarell",
         info: "Cantharellus cibarius, er en av Norges beste og mest gjenkjennelige matsopper. Den vokser i hele landet og har lang sesong.",
         alt: "kantarell"
@@ -73,7 +73,7 @@ const mushroomData = [
     {
         id: 7,
         type: "Ikke-giftig",
-        src: "IMG/ametystsopp.png",
+        src: "IMG/ametystsopp_hvitkant.png",
         name: "Ametystsopp",
         info: "Lakssopp eller Laccaria amethystina, Lakssopp er oftest lakserøde til rødfiolette små sopper med tynn stilk og tykke, voksaktige skiver. ",
         alt: "ametystsopp"
