@@ -22,6 +22,17 @@ main img {
   position: relative;
 }
 
+#Jens {
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  color: #666;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-top: -2rem;
+  object-fit: cover;
+}
+
 #bildelogo .logo {
   font-family: Arial, sans-serif;
   font-size: 50px;
@@ -30,6 +41,15 @@ main img {
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+.bildetekst {
+  color: #666;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-top: -2rem;
+  text-align: center;
+  
 }
 
 h1 {
@@ -42,7 +62,7 @@ h1 {
 
 .tekst {
   line-height: 2;
-  padding: 5rem;
+  padding: 3rem;
   font-size: 1.5rem;
   color: #333333;
   padding-top: 0;
